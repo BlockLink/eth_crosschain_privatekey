@@ -1,0 +1,9 @@
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/rebuild_cache.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/edit_cache.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/gen_context.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/ecmult_static_context.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/install.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/list_install_components.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/secp256k1.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/install/local.dir
+/home/ted/ethlib/eth_sign/secp256k1/CMakeFiles/install/strip.dir
