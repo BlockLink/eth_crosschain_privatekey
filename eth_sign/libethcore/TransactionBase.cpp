@@ -146,7 +146,6 @@ SignatureStruct const& TransactionBase::signature() const
 void TransactionBase::sign(Secret const& _priv)
 {
 	auto without_sign = sha3(WithoutSignature);
-	std::cout << "sign hex is" << without_sign.hex() << std::endl;
 	auto sig = dev::sign(_priv, sha3(WithoutSignature));
 	SignatureStruct sigStruct = *(SignatureStruct const*)&sig;
 	if (sigStruct.isValid())
@@ -234,6 +233,5 @@ h256 TransactionBase::sha3(IncludeSignature _sig) const
 	auto ret = dev::sha3(s.out());
 	if (_sig == WithSignature)
 		m_hashWith = ret;
-	std::cout << "source is "<<ret.hex() << std::endl;
 	return ret;
 }

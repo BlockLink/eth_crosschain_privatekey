@@ -208,11 +208,11 @@ Public dev::recover(Signature const& _sig, h256 const& _message)
 
 	auto* ctx = getCtx();
 eth_secp256k1_ecdsa_recoverable_signature rawSig;
-	if (eth_secp256k1_ecdsa_recoverable_signature_parse_compact(ctx, &rawSig, _sig.data(), v))
+	if (!eth_secp256k1_ecdsa_recoverable_signature_parse_compact(ctx, &rawSig, _sig.data(), v))
 		return {};
 
 eth_secp256k1_pubkey rawPubkey;
-	if (eth_secp256k1_ecdsa_recover(ctx, &rawPubkey, &rawSig, _message.data()))
+	if (!eth_secp256k1_ecdsa_recover(ctx, &rawPubkey, &rawSig, _message.data()))
 		return {};
 
 	std::array<byte, 65> serializedPubkey;
