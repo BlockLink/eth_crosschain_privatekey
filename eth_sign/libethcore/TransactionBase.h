@@ -103,7 +103,7 @@ public:
 
 	/// Serialises this transaction to an RLPStream.
 	/// @throws TransactionIsUnsigned if including signature was requested but it was not initialized
-	void streamRLP(RLPStream& _s, IncludeSignature _sig = WithSignature, bool _forEip155hash = false) const;
+	void streamRLP(RLPStream& _s, IncludeSignature _sig = WithSignature, bool _forEip155hash = true) const;
 
 	/// @returns the RLP serialisation of this transaction.
 	bytes rlp(IncludeSignature _sig = WithSignature) const { RLPStream s; streamRLP(s, _sig); return s.out(); }
