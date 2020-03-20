@@ -27,6 +27,7 @@ INCLUDE_DIRECTORIES(
 	"secp256k1"
 	"secp256k1/include"
 	"secp256k1/src"
+	${LEVEL_DB_DIR}/include
 	"./"
 #        "/home/ted/ethlib/cryptopp"
  #       "/home/ted/ethlib/libdevcore"
@@ -44,11 +45,15 @@ LINK_DIRECTORIES(
 set(SOURCE_FILES
 	main.cpp
 )
+if(APPLE)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCRYPTOPP_DISABLE_SSE4" )
+endif()
 
+add_library(cryptopp ${CRYPTOPP_SRC})
 add_library(eth_sign ${DEVCORE_SRC}  ${ETHCORE_SRC} ${DEVCRYPTO_SRC} secp256k1/src/eth_secp256k1.c)
 #add_executable(eth_sign ${DEVCORE_SRC}  ${ETHCORE_SRC} ${DEVCRYPTO_SRC})
 
-target_link_libraries( eth_sign libcryptopp.a)
+target_link_libraries( eth_sign )
 INSTALL(TARGETS
 	eth_sign
 
