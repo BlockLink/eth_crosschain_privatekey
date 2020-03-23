@@ -28,6 +28,7 @@ INCLUDE_DIRECTORIES(
 	"secp256k1/include"
 	"secp256k1/src"
 	${LEVEL_DB_DIR}/include
+	${BOOST_INCLUDE_DIR}
 	"./"
 #        "/home/ted/ethlib/cryptopp"
  #       "/home/ted/ethlib/libdevcore"
