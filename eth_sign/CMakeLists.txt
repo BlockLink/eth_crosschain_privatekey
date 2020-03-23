@@ -48,6 +48,9 @@ set(SOURCE_FILES
 if(APPLE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCRYPTOPP_DISABLE_SSE4" )
 endif()
+if(LINUX)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCRYPTOPP_DISABLE_SSE4" )
+endif()
 
 add_library(cryptopp ${CRYPTOPP_SRC})
 add_library(eth_sign ${DEVCORE_SRC}  ${ETHCORE_SRC} ${DEVCRYPTO_SRC} secp256k1/src/eth_secp256k1.c)
