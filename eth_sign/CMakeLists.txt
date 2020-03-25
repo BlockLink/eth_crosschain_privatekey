@@ -40,7 +40,7 @@ LINK_DIRECTORIES(
         "libdevcore"
         "libethcore"
         "libdevcrypto"
-	"cryptopp"
+		"cryptopp"
 )
 
 set(SOURCE_FILES
@@ -49,6 +49,10 @@ set(SOURCE_FILES
 if(NOT WIN32 )
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCRYPTOPP_DISABLE_SSE4" )
 endif()
+if( WIN32 )
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCRYPTOPP_X64_MASM_NOT_AVAILABLE /EHsc" )
+endif()
+
 
 add_library(cryptopp ${CRYPTOPP_SRC})
 add_library(eth_sign ${DEVCORE_SRC}  ${ETHCORE_SRC} ${DEVCRYPTO_SRC} secp256k1/src/eth_secp256k1.c)

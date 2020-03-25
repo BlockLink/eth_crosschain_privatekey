@@ -500,7 +500,7 @@ NAMESPACE_END
 	#endif
 #endif
 
-#if !defined(CRYPTOPP_DISABLE_ASM) && defined(_MSC_VER) && defined(_M_X64)
+#if !defined(CRYPTOPP_DISABLE_ASM) && defined(_MSC_VER) && defined(_M_X64) && !defined(CRYPTOPP_X64_MASM_NOT_AVAILABLE)
 	#define CRYPTOPP_X64_MASM_AVAILABLE 1
 #endif
 
